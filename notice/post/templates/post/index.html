@@ -1,0 +1,41 @@
+<html>
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'post/style.css' %}">
+
+
+
+
+
+
+    
+    <head>
+        <title>index</title>
+    </head>
+    <body>
+
+        
+        <!--!<div>{{recent_list}}</div>--!-->
+    <ul>
+        {% if all_posts %}
+        {% for i in all_posts %}
+        <li><a href="{% url 'post:content' forloop.counter %}">here post: {{i}}</a>
+            <!--!--<>{{ i }}</a></li>--!-->
+        {% endfor %}
+    </ul>
+          {% else %}
+    <p>No posts are available.</p>
+        {% endif %} 
+
+    <div> 
+        {% for i in all_posts %}
+
+        <p> View comments for {{i}} : <a href="{% url 'post:comments' forloop.counter %}">enter for {{msg_id}}</a></p>
+    </div>
+         {% endfor %}
+        
+
+    </body>
+    </html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title> The like page</title>
+    </head>
+    <body>
+        
+        You like the post: {{j}}<br>
+        The likes on each post are<br>
+        {% for p in posts %}
+        The post title: {{p}}<br>
+        The post id: {{p.id}}<br>
+
+        {% endfor %}
+        For post {{j}} number of likes: {{num}}
+        </body>
+        </html>

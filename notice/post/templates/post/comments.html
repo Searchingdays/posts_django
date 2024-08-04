@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>comments {{post_title}}</title>
+    </head>
+    <body>
+        <div>{{date}}<br>
+        <p>{{post_title}}</p><br>
+        
+
+        </div>
+        {% for c in comments %}
+        <p> the comment :<br>
+            {{c}}
+            </p>
+        {% endfor %}
+
+
+        <form method="POST" action="{% url 'post:comment_write' msg_id %}">{% csrf_token %}
+            
+            <input type="text" placeholder="write a comment"  name="textfield">write a comment for post {{post_title}}
+            <button type="submit">submit</button> 
+            
+        </form>
+        </body>
+        </html>

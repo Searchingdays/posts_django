@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>{{msg_title}}</title>
+    </head>
+    <body>
+        <h2>{{msg_title}}</h2>
+        <h3>Post dated: {{date}}</h3>
+        <p>{{content}}</p><br>
+        <form method="POST" action="{% url 'post:likepress' msg_id %}"> {% csrf_token %}
+        <button id="like" type="submit" name="like"> like </button> 
+        </form>
+
+
+        <form method="POST" action="{% url 'post:comment_write' msg_id %}"> {% csrf_token %}
+
+            <input type="text" placeholder="write your comment" name="textfield">
+
+
+        <button id="comments" type="submit">submit your comment</button>
+        
+        </form>
+
+        
+        <br><br>
+        <p>Want to learn more</p>
+        <button>More info</button>
+
+    </body>
+    <script>
+        function likes(){
+        const p = true
+        }
+        </script>
+        
+        
+</html>
